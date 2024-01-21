@@ -1,4 +1,11 @@
+using Catalog.API.Data;
+using Catalog.API.Repositories;
+using Catalog.API.Repositories.Interfaces;
+using Microsoft.OpenApi.Models;
+
 var builder = WebApplication.CreateBuilder(args);
+builder.Services.AddScoped<ICatalogContext, CatalogContext>();
+builder.Services.AddScoped<IProductRepository, ProductRepository>();
 
 // Add services to the container.
 
